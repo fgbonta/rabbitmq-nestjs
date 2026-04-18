@@ -1,8 +1,17 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+
+import { NotificationsModule } from './notifications/notifications.module';
 
 @Module({
-  imports: [],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+    NotificationsModule,
+  ],
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
