@@ -12,15 +12,14 @@ import { NotificationsController } from './notifications.controller';
         name: 'NOTIFICATIONS_RABBIT_SERVICE',
         inject: [ConfigService],
         useFactory: (config: ConfigService) => {
-          const url = config.get<string>('RABBITMQ_URL');
-          //console.log('👉 URL dentro de factory:', url);
+          const url = config.get<string>('RABBITMQ_URL')!;
           return {
             transport: Transport.RMQ,
             options: {
-              urls: [url!],
+              urls: [url],
               queue: 'notifications_queue',
               queueOptions: {
-                durable: true,
+                durable: true, // La cola durable asegura que la cola sobreviva a reinicios del broker. Pero no es suficiente para garantizar la persistencia de los mensajes.
               },
             },
           };
