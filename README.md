@@ -10,26 +10,17 @@
 
 1. Clonar el repositorio
 
-2. Ejecutar
-```
-npm install
-```
+2. ```npm install```
 
-3. Clonar el archivo __.env.template__ y renombrar __.env__
+3. Clonar el archivo ```.env.template``` y renombrar ```.env```
 
-4. Llenar las variables de entorno definidas en el __.env__
+4. Llenar las variables de entorno definidas en el ```.env```
 
 5. Levantar rabbitmq
-```
-docker compose up -d
-```
+```docker compose up -d```
 
 6. Ejecutar la aplicación en dev:
-```
-npm run start:dev
-```
+```npm run start:dev```
 
 7. Interfaz de administración RabbitMQ.
-```
-http://localhost:15672
-```
+```http://localhost:15672```

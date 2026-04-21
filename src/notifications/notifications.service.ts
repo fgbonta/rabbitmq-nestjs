@@ -29,6 +29,9 @@ export class NotificationsService implements OnModuleInit {
 
   async create(createNotificationDto: CreateNotificationDto) {
     try {
+
+      createNotificationDto['date'] = new Date().toUTCString();
+
       /*
       emit() = evento (fire-and-forget)
       NO devuelve respuesta del consumer
