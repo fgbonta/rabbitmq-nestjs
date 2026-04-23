@@ -1,8 +1,7 @@
-import { IsNumber, IsPositive, IsString, Min, MinLength } from "class-validator";
+import { IsPositive, IsString, Min, MinLength } from "class-validator";
 
 export class CreateNotificationDto {
 
-    @IsNumber()
     @IsPositive()
     @Min(1)
     userId: number;
